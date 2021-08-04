@@ -2,8 +2,7 @@ steps:
 
 # clone the latest source codes 
 - name: 'gcr.io/cloud-builders/gcloud'
-  command: ["clone"]
-  args: ['github_vibhakurpad_flutterwebapp', '--project=akshay-poc']
+  args: ['clone','github_vibhakurpad_flutterwebapp --project=akshay-poc']
   dir: '/workspace'
 
 # using flutter builder Docker image we have built previously to compile the repo
