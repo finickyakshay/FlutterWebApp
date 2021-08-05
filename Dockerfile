@@ -16,6 +16,7 @@ WORKDIR /usr/local/bin/app
 RUN flutter pub get
 RUN flutter build web
 
-# Document the exposed port and start serser
+# Document the exposed port and start server
+RUN chmod +x /usr/local/bin/app/server/server.sh
 EXPOSE 8080
 ENTRYPOINT [ "/usr/local/bin/app/server/server.sh" ]
