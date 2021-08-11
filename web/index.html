@@ -44,6 +44,7 @@
   <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-analytics.js"></script>
   <script>
     // Your web app's Firebase configuration
     var firebaseConfig = {
@@ -53,9 +54,11 @@
     storageBucket: "the-second-attempt.appspot.com",
     messagingSenderId: "554032511409",
     appId: "1:554032511409:web:4a96911599e44d5afae590"
+    measurementId: "G-LRS269KS3T"
   };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
   </script>
   <script src="main.dart.js" type="application/javascript"></script>
 </body>
