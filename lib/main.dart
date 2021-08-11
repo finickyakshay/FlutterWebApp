@@ -25,9 +25,9 @@ class App extends StatelessWidget {
       title: 'Firebase Meetup',
       theme: ThemeData(
         buttonTheme: Theme.of(context).buttonTheme.copyWith(
-              highlightColor: Colors.deepPurple,
+              highlightColor: Colors.yellow,
             ),
-        primarySwatch: Colors.deepPurple,
+        primarySwatch: Colors.red,
         textTheme: GoogleFonts.robotoTextTheme(
           Theme.of(context).textTheme,
         ),
