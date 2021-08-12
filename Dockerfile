@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM alpine:3.14
 
 # Setup 
 RUN apt-get update && apt-get install -y unzip xz-utils git openssh-client curl python3 && apt-get upgrade -y && rm -rf /var/cache/apt
