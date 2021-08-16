@@ -8,6 +8,7 @@ steps:
       - .
       - '-f'
       - Dockerfile
+    dir: '/workspace/FlutterWebApp'  
     id: Build
   - name: gcr.io/cloud-builders/docker
     args:
@@ -21,7 +22,7 @@ steps:
       - build
       - '--interactive=false'
       - '--file-output=artifacts.json'
-    dir: /workspace/FlutterWebApp
+    dir: '/workspace/FlutterWebApp'  
   - name: gcr.io/google.com/cloudsdktool/cloud-sdk
     entrypoint: bash
     args: 
