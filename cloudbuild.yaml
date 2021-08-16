@@ -8,7 +8,6 @@ steps:
       - .
       - '-f'
       - Dockerfile
-    dir: '/workspace/FlutterWebApp'  
     id: Build
   - name: gcr.io/cloud-builders/docker
     args:
