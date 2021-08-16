@@ -21,9 +21,8 @@ steps:
       - build
       - '--interactive=false'
       - '--file-output=artifacts.json'
-    dir: /workspace/skaffold/skaffold.yaml
+    dir: /workspace/FlutterWebApp
   - name: gcr.io/google.com/cloudsdktool/cloud-sdk
-  
     entrypoint: bash
     args: 
     - '-c'
