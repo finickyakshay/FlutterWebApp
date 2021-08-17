@@ -1,0 +1,17 @@
+apiVersion: skaffold/v2beta7
+kind: Config
+build:
+  artifacts:
+    - image: flutter-frontend
+      context: frontend
+  googleCloudBuild:
+    projectId: akshay-cicd-demo
+deploy:
+  kubectl:
+    manifests:
+      - frontend/kubernetes/*
+portForward:
+  - resourceType: deployment
+    resourceName: flutter-frontend
+    port: 8080
+    localPort: 8080

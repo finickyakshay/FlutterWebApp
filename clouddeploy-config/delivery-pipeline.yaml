@@ -1,0 +1,10 @@
+apiVersion: deploy.cloud.google.com/v1beta1
+kind: DeliveryPipeline
+metadata:
+  name: flutter-app
+description: flutter-app delivery pipeline
+serialPipeline:
+ stages:
+ - targetId: test
+ - targetId: staging
+ - targetId: prod

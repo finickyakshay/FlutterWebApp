@@ -11,7 +11,7 @@ RUN flutter upgrade
 RUN flutter config --enable-web
 
 # Copy files to container and get dependencies
-RUN git clone https://github.com/VibhaKurpad/FlutterWebApp.git /usr/local/bin/app
+RUN git clone https://github.com/finickyakshay/FlutterWebApp.git /usr/local/bin/app
 WORKDIR /usr/local/bin/app
 RUN flutter pub get
 RUN flutter build web
