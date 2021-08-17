@@ -22,9 +22,10 @@ steps:
     gcloud alpha deploy apply --file clouddeploy-config/target-test.yaml --region us-central1
     gcloud alpha deploy apply --file clouddeploy-config/target-staging.yaml --region us-central1
     gcloud alpha deploy apply --file clouddeploy-config/target-prod.yaml --region us-central1
-    gcloud alpha deploy releases create $SHORT_SHA-$(date +%s) \
+    gcloud alpha deploy releases create $SHORT_SHA-$(date +%Y-%m-%d) \
                         --delivery-pipeline flutter-app \
                         --description "$(git log -1  --pretty='%s')" \
                         --region us-central1 \
-                        --build-artifacts web-app/artifacts.json
+                        --build-artifacts web-app/artifacts.json \
+                        --source web-app/
 
