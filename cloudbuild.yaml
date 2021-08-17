@@ -7,11 +7,12 @@ steps:
   - -c
   - |
     # Build and push images
-    skaffold build --file-output=/workspace/web-app/artifacts.json \
-                   --default-repo gcr.io/$PROJECT_ID \
-                   --push=true
-    # Test images
-    skaffold test --build-artifacts=/workspace/web-app/artifacts.json
+    cd web-app && skaffold build interactive=false 
+    --file-output=/artifacts.json \
+    --default-repo $(gcloud config get-value \
+    compute/region)-docker.pkg.dev/akshay-cicd-demo/flutter-app \
+    && cd ..
+               
 - name: 'google/cloud-sdk:latest'
   id: create-release
   entrypoint: 'sh'
@@ -27,7 +28,7 @@ steps:
                         --delivery-pipeline flutter-app \
                         --description "$(git log -1  --pretty='%s')" \
                         --region us-central1 \
-                        --build-artifacts /workspace/web-app/artifacts.json
+                        --build-artifacts web-app/artifacts.json
 artifacts:
   objects:
     location: 'gs://$PROJECT_ID-flutter-cicd-artifacts/'
