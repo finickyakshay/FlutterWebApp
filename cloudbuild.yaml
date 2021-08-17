@@ -8,9 +8,9 @@ steps:
   - |
     # Build and push images
     cd web-app && skaffold build --interactive=false \
-    --file-output=/artifacts.json \
-    --default-repo $(gcloud config get-value \
-    compute/region)-docker.pkg.dev/akshay-cicd-demo/flutter-app \
+    --file-output artifacts.json \
+    --default-repo us-central1 \
+    -docker.pkg.dev/akshay-cicd-demo/flutter-app \
     && cd ..
                
 - name: 'google/cloud-sdk:latest'
